@@ -55,16 +55,16 @@ repositories {
 	exclusiveContent {
 		forRepository {
 			maven {
-				url = "https://api.modrinth.com/maven/"
+				url = "https://maven.is-immensely.gay/releases/"
 			}
 		}
 		filter {
-			includeGroup "maven.modrinth"
+			includeGroup "de.dafuqs"
 		}
 	}
 }
 
-def modName = "FractalJEI-Fabric"
+def modName = "FractalJEI-NeoForge"
 def specVersion = "2"
 def vendor = "thelm"
 
@@ -80,7 +80,7 @@ sourceSets {
 
 java {
 	toolchain {
-		languageVersion = JavaLanguageVersion.of(17)
+		languageVersion = JavaLanguageVersion.of(21)
 		vendor = JvmVendorSpec.AZUL
 	}
 	withSourcesJar()
@@ -94,34 +94,27 @@ loom {
 	silentMojangMappingsLicense()
 	runs {
 		configureEach {
-			property "fabric.log.console.level", "debug"
+			property "forge.logging.console.level", "debug"
 		}
-		client {
-			programArg "--username=Dev"
-		}
+		client
 		server
 	}
 }
 
 dependencies {
 	// Minecraft
-	minecraft "com.mojang:minecraft:1.20.1"
+	minecraft "com.mojang:minecraft:1.21.1"
 	mappings loom.layered {
-		officialMojangMappings {
-			nameSyntheticMembers = false
-		}
-		parchment "org.parchmentmc.data:parchment-1.20.1:2023.09.03@zip"
+		officialMojangMappings()
+		parchment "org.parchmentmc.data:parchment-1.21.1:2024.11.17@zip"
 	}
-	modImplementation "net.fabricmc:fabric-loader:0.18.1"
-	modImplementation "net.fabricmc.fabric-api:fabric-api:0.92.7+1.20.1"
-	modImplementation "eu.pb4:placeholder-api:2.1.4+1.20.1"
-	modImplementation "com.terraformersmc:modmenu:7.2.2"
+	neoForge "net.neoforged:neoforge:21.1.219"
 
 	// JEI
-	modImplementation("mezz.jei:jei-1.20.1-fabric:15.20.0.129") {transitive = false}
+	implementation("mezz.jei:jei-1.21.1-neoforge:19.27.0.340") {transitive = false}
 
 	// Fractal
-	modImplementation "maven.modrinth:fractal-lib:rBFEjAiy"
+	implementation "de.dafuqs:Fractal:1.6.0+1.21.1-neoforge"
 }
 
 def replacements = [
