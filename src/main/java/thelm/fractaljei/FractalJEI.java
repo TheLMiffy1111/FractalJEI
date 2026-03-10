@@ -3,14 +3,14 @@ package thelm.fractaljei;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.registration.IGuiHandlerRegistration;
 import net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
 public class FractalJEI implements IModPlugin {
 
-	public static final ResourceLocation UID = ResourceLocation.tryParse("fractaljei:fractal");
+	public static final Identifier UID = Identifier.tryParse("fractaljei:fractal");
 
 	@Override
-	public ResourceLocation getPluginUid() {
+	public Identifier getPluginUid() {
 		return UID;
 	}
 

@@ -55,21 +55,21 @@ repositories {
 	exclusiveContent {
 		forRepository {
 			maven {
-				url = "https://api.modrinth.com/maven/"
+				url = "https://maven.is-immensely.gay/releases/"
 			}
 		}
 		filter {
-			includeGroup "maven.modrinth"
+			includeGroup "de.dafuqs"
 		}
 	}
 }
 
 def modName = "FractalJEI-Fabric"
-def specVersion = "2"
+def specVersion = "3"
 def vendor = "thelm"
 
 group = "thelm.fractaljei"
-version = "2.0.0"
+version = "3.0.0"
 
 def archivesName = modName
 base.archivesName = archivesName
@@ -80,7 +80,7 @@ sourceSets {
 
 java {
 	toolchain {
-		languageVersion = JavaLanguageVersion.of(17)
+		languageVersion = JavaLanguageVersion.of(21)
 		vendor = JvmVendorSpec.AZUL
 	}
 	withSourcesJar()
@@ -105,23 +105,23 @@ loom {
 
 dependencies {
 	// Minecraft
-	minecraft "com.mojang:minecraft:1.20.1"
+	minecraft "com.mojang:minecraft:1.21.11"
 	mappings loom.layered {
 		officialMojangMappings {
 			nameSyntheticMembers = false
 		}
-		parchment "org.parchmentmc.data:parchment-1.20.1:2023.09.03@zip"
+		parchment "org.parchmentmc.data:parchment-1.21.11:2025.12.20@zip"
 	}
 	modImplementation "net.fabricmc:fabric-loader:0.18.1"
-	modImplementation "net.fabricmc.fabric-api:fabric-api:0.92.7+1.20.1"
-	modImplementation "eu.pb4:placeholder-api:2.1.4+1.20.1"
-	modImplementation "com.terraformersmc:modmenu:7.2.2"
+	modImplementation "net.fabricmc.fabric-api:fabric-api:0.141.3+1.21.11"
+	modImplementation "eu.pb4:placeholder-api:2.8.2+1.21.10"
+	modImplementation "com.terraformersmc:modmenu:17.0.0-beta.2"
 
 	// JEI
-	modImplementation("mezz.jei:jei-1.20.1-fabric:15.20.0.129") {transitive = false}
+	modImplementation("mezz.jei:jei-1.21.11-fabric:27.4.0.15") {transitive = false}
 
 	// Fractal
-	modImplementation "maven.modrinth:fractal-lib:rBFEjAiy"
+	modImplementation "de.dafuqs:fractal:1.5.0+1.21.11"
 }
 
 def replacements = [
