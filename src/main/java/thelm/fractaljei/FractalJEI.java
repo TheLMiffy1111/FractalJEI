@@ -7,7 +7,7 @@ import net.minecraft.resources.ResourceLocation;
 
 public class FractalJEI implements IModPlugin {
 
-	public static final ResourceLocation UID = new ResourceLocation("fractaljei:fractal");
+	public static final ResourceLocation UID = ResourceLocation.tryParse("fractaljei:fractal");
 
 	@Override
 	public ResourceLocation getPluginUid() {
