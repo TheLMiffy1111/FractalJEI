@@ -1,0 +1,30 @@
+modLoader = "javafml"
+loaderVersion = "[2,)"
+license = "MIT"
+issueTrackerURL = "https://github.com/TheLMiffy1111/FractalJEI/issues"
+
+[[mods]]
+	modId = "fractaljei"
+	version = "0@VERSION@"
+	displayName = "FractalJEI"
+	description = "An addon to Fractal that adds JEI support."
+	logoFile = "fractaljei.logo.png"
+	authors = "TheLMiffy1111"
+
+[[mixins]]
+	config = "fractaljei.mixins.json"
+
+[[dependencies.fractaljei]]
+	modId = "minecraft"
+	versionRange = "[1.21.11,)"
+	type = "required"
+
+[[dependencies.fractaljei]]
+	modId = "jei"
+	versionRange = "*"
+	type = "required"
+
+[[dependencies.fractaljei]]
+	modId = "fractal"
+	versionRange = "*"
+	type = "required"

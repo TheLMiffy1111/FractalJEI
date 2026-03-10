@@ -64,7 +64,7 @@ repositories {
 	}
 }
 
-def modName = "FractalJEI-Fabric"
+def modName = "FractalJEI-NeoForge"
 def specVersion = "3"
 def vendor = "thelm"
 
@@ -94,11 +94,9 @@ loom {
 	silentMojangMappingsLicense()
 	runs {
 		configureEach {
-			property "fabric.log.console.level", "debug"
+			property "forge.logging.console.level", "debug"
 		}
-		client {
-			programArg "--username=Dev"
-		}
+		client
 		server
 	}
 }
@@ -107,21 +105,16 @@ dependencies {
 	// Minecraft
 	minecraft "com.mojang:minecraft:1.21.11"
 	mappings loom.layered {
-		officialMojangMappings {
-			nameSyntheticMembers = false
-		}
+		officialMojangMappings()
 		parchment "org.parchmentmc.data:parchment-1.21.11:2025.12.20@zip"
 	}
-	modImplementation "net.fabricmc:fabric-loader:0.18.1"
-	modImplementation "net.fabricmc.fabric-api:fabric-api:0.141.3+1.21.11"
-	modImplementation "eu.pb4:placeholder-api:2.8.2+1.21.10"
-	modImplementation "com.terraformersmc:modmenu:17.0.0-beta.2"
+	neoForge "net.neoforged:neoforge:21.11.38-beta"
 
 	// JEI
-	modImplementation("mezz.jei:jei-1.21.11-fabric:27.4.0.15") {transitive = false}
+	implementation("mezz.jei:jei-1.21.11-neoforge:27.4.0.15") {transitive = false}
 
 	// Fractal
-	modImplementation "de.dafuqs:fractal:1.5.0+1.21.11"
+	implementation "de.dafuqs:fractal-neoforge:2.0.0+1.21.11-neoforge"
 }
 
 def replacements = [

@@ -24,7 +24,7 @@ public class ItemStackListFactoryMixin {
 
 	@Inject(method = "create", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/CreativeModeTabs;allTabs()Ljava/util/List;"))
 	private static void fractaljei$buildSubTabContents(CallbackInfoReturnable<List<ItemStack>> info, @Local CreativeModeTab.ItemDisplayParameters displayParameters) {
-		for(CreativeModeTab tab : CreativeSubTab.SUB_GROUPS) {
+		for(CreativeSubTab tab : CreativeSubTab.SUBTABS) {
 			if(tab.getType() != CreativeModeTab.Type.CATEGORY) {
 				LOGGER.debug("Skipping creative tab: '{}' because it is type: {}", tab.getDisplayName().getString(), tab.getType());
 				continue;
