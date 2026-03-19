@@ -19,6 +19,9 @@
 			"thelm.fractaljei.FractalJEI"
 		]
 	},
+	"mixins": [
+		"fractaljei.mixins.json"
+	],
 	"depends": {
 		"minecraft": ">=1.19-",
 		"jei": "*",
