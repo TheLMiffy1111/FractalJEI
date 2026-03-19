@@ -55,16 +55,16 @@ repositories {
 	exclusiveContent {
 		forRepository {
 			maven {
-				url = "https://api.modrinth.com/maven/"
+				url = "https://repo.unascribed.com/"
 			}
 		}
 		filter {
-			includeGroup "maven.modrinth"
+			includeGroup "com.unascribed"
 		}
 	}
 }
 
-def modName = "FractalJEI-Fabric"
+def modName = "FractalJEI-Lib39"
 def specVersion = "1"
 def vendor = "thelm"
 
@@ -121,7 +121,7 @@ dependencies {
 	modImplementation("mezz.jei:jei-1.19.2-fabric:11.8.1.1034") {transitive = false}
 
 	// Fractal
-	modImplementation "maven.modrinth:fractal-lib:8I3R187M"
+	modImplementation "com.unascribed:lib39-fractal:1.5.0-pre3+1.19.2"
 }
 
 def replacements = [

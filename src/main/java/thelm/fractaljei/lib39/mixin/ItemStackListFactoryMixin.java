@@ -1,4 +1,4 @@
-package thelm.fractaljei.mixin;
+package thelm.fractaljei.lib39.mixin;
 
 import org.apache.logging.log4j.Logger;
 import org.spongepowered.asm.mixin.Mixin;
@@ -7,8 +7,8 @@ import org.spongepowered.asm.mixin.injection.At;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.unascribed.lib39.fractal.quack.ItemGroupParent;
 
-import de.dafuqs.fractal.quack.ItemGroupParent;
 import mezz.jei.library.plugins.vanilla.ingredients.ItemStackListFactory;
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.CreativeModeTab;
@@ -22,8 +22,8 @@ public class ItemStackListFactoryMixin {
 
 	@WrapOperation(method = "create", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/CreativeModeTab;fillItemList(Lnet/minecraft/core/NonNullList;)V"))
 	private static void fractaljei$appendSubTabContents(CreativeModeTab tab, NonNullList<ItemStack> stacks, Operation<Void> original) {
-		if(tab instanceof ItemGroupParent parent && !parent.fractal$getChildren().isEmpty()) {
-			for(CreativeModeTab subTab : parent.fractal$getChildren()) {
+		if(tab instanceof ItemGroupParent parent && !parent.lib39Fractal$getChildren().isEmpty()) {
+			for(CreativeModeTab subTab : parent.lib39Fractal$getChildren()) {
 				try {
 					subTab.fillItemList(stacks);
 				}

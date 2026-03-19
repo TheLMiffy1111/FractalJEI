@@ -1,8 +1,8 @@
 {
 	"schemaVersion": 1,
-	"id": "fractaljei",
+	"id": "fractaljei-lib39",
 	"version": "0@VERSION@",
-	"name": "FractalJEI",
+	"name": "FractalJEI-Lib39",
 	"description": "An addon to Fractal that adds JEI support.",
 	"authors": [
 		"TheLMiffy1111"
@@ -14,17 +14,12 @@
 	"license": "MIT",
 	"icon": "fractaljei.logo.png",
 	"environment": "client",
-	"entrypoints": {
-		"jei_mod_plugin": [
-			"thelm.fractaljei.FractalJEI"
-		]
-	},
 	"mixins": [
-		"fractaljei.mixins.json"
+		"fractaljei-lib39.mixins.json"
 	],
 	"depends": {
 		"minecraft": ">=1.19-",
 		"jei": "*",
-		"fractal": "*"
+		"lib39-fractal": "*"
 	}
 }
