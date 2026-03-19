@@ -69,7 +69,7 @@ def specVersion = "3"
 def vendor = "thelm"
 
 group = "thelm.fractaljei"
-version = "3.0.0"
+version = "3.0.1"
 
 def archivesName = modName
 base.archivesName = archivesName
