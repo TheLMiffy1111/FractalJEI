@@ -65,11 +65,12 @@ repositories {
 }
 
 def modName = "FractalJEI-NeoForge"
+def modId = "fractaljei"
 def specVersion = "3"
 def vendor = "thelm"
 
 group = "thelm.fractaljei"
-version = "3.0.1"
+version = "3.0.2"
 
 def archivesName = modName
 base.archivesName = archivesName
