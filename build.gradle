@@ -65,11 +65,12 @@ repositories {
 }
 
 def modName = "FractalJEI-Fabric"
+def modId = "fractaljei"
 def specVersion = "2"
 def vendor = "thelm"
 
 group = "thelm.fractaljei"
-version = "2.0.1"
+version = "2.0.2"
 
 def archivesName = modName
 base.archivesName = archivesName
@@ -92,6 +93,7 @@ tasks.withType(JavaCompile).configureEach {
 
 loom {
 	silentMojangMappingsLicense()
+	mixin.defaultRefmapName = "${modId}.refmap.json"
 	runs {
 		configureEach {
 			property "fabric.log.console.level", "debug"
