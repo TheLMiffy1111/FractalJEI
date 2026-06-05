@@ -109,10 +109,10 @@ dependencies {
 		officialMojangMappings()
 		parchment "org.parchmentmc.data:parchment-1.21.11:2025.12.20@zip"
 	}
-	neoForge "net.neoforged:neoforge:21.11.38-beta"
+	neoForge "net.neoforged:neoforge:21.11.42"
 
 	// JEI
-	implementation("mezz.jei:jei-1.21.11-neoforge:27.4.0.15") {transitive = false}
+	implementation("mezz.jei:jei-1.21.11-neoforge:27.4.0.22") {transitive = false}
 
 	// Fractal
 	implementation "de.dafuqs:fractal-neoforge:2.0.0+1.21.11-neoforge"
