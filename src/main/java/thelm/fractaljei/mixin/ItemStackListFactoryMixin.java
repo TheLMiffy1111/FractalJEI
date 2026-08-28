@@ -23,7 +23,7 @@ public class ItemStackListFactoryMixin {
 	@Shadow
 	private static Logger LOGGER;
 
-	@WrapOperation(method = "create", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/CreativeModeTab;buildContents(Lnet/minecraft/world/item/CreativeModeTab$ItemDisplayParameters;)V"))
+	@WrapOperation(method = {"create", "lambda$create$2"}, at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/CreativeModeTab;buildContents(Lnet/minecraft/world/item/CreativeModeTab$ItemDisplayParameters;)V"))
 	private static void fractaljei$buildSubTabContents(CreativeModeTab tab, CreativeModeTab.ItemDisplayParameters displayParameters, Operation<Void> original) {
 		if(tab instanceof ICreativeTabParent parent && !parent.fractal$getChildren().isEmpty()) {
 			for(CreativeModeTab subTab : parent.fractal$getChildren()) {
@@ -40,7 +40,7 @@ public class ItemStackListFactoryMixin {
 		}
 	}
 
-	@WrapOperation(method = "create", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/CreativeModeTab;getDisplayItems()Ljava/util/Collection;"))
+	@WrapOperation(method = {"create", "lambda$create$2"}, at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/CreativeModeTab;getDisplayItems()Ljava/util/Collection;"))
 	private static Collection<ItemStack> fractaljei$getSubTabContents(CreativeModeTab tab, Operation<Collection<ItemStack>> original) {
 		if(tab instanceof ICreativeTabParent parent && !parent.fractal$getChildren().isEmpty()) {
 			List<ItemStack> stacks = new ArrayList<>();
