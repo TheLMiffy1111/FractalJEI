@@ -70,7 +70,7 @@ def specVersion = "3"
 def vendor = "thelm"
 
 group = "thelm.fractaljei"
-version = "3.0.2"
+version = "3.0.3"
 
 def archivesName = modName
 base.archivesName = archivesName
@@ -109,10 +109,10 @@ dependencies {
 		officialMojangMappings()
 		parchment "org.parchmentmc.data:parchment-1.21.11:2025.12.20@zip"
 	}
-	neoForge "net.neoforged:neoforge:21.11.42"
+	neoForge "net.neoforged:neoforge:21.11.45"
 
 	// JEI
-	implementation("mezz.jei:jei-1.21.11-neoforge:27.13.0.43") {transitive = false}
+	implementation("mezz.jei:jei-1.21.11-neoforge:27.30.0.79") {transitive = false}
 
 	// Fractal
 	implementation "de.dafuqs:fractal-neoforge:2.0.0+1.21.11-neoforge"
